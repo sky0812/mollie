@@ -1,0 +1,12 @@
+{
+	"classes": [	
+		{
+			"name": "block",
+			"class": "\\Ilia\\Fnugg_Resort\\Block"
+		},
+		{
+			"name": "Connector",
+			"class": "\\Ilia\\Fnugg_Resort\\Connector"
+		}
+	]
+}

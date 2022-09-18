@@ -1,0 +1,109 @@
+.fnugg-block p{
+    margin: 0;
+    padding: 0;
+}
+.fnugg-block{
+    width: 350px;
+    height: 470px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    -webkit-box-shadow: 5px 7px 15px -7px #000000; 
+    box-shadow: 5px 7px 15px -7px #000000;
+}
+.fnugg-block--header{
+    width: 100%;
+    height: fit-content;
+}
+.fnugg-resort-title{
+    color: white;
+    background-color: #2d2d2d;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 17px;
+    font-weight: 600;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.fnugg-main-img--wrapp{
+    position: relative;
+}
+.fnugg-main-img{
+    max-width: 100%;
+    height: auto;
+}
+.fnugg-place--wrapp{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    bottom: 6px;
+    opacity: 0.7;
+    padding-top: 5px;
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+.fnugg-place-title{
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 20px;
+}
+.fnugg-open-date{
+    font-size: 13px;
+}
+.fnugg-resort-info--wrapp{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+}
+.fnugg-resort-info--wrapp > *{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 6.375em;
+    padding-top: 6px;
+}
+.fnugg-weather--wrapp{
+    flex-direction: column;
+    align-items: center;
+}
+.fnugg-weather-icon{
+    max-width:60px
+}
+.fnugg-temperature--wrapp{
+    height: fit-content;
+    font-size: 62px;
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+.fnugg-temperature{
+    width: fit-content;
+    height: fit-content;
+}
+.fnugg-wind--wrapp{
+    flex-direction: column;
+    align-items: center;
+}
+.fnugg-wind-mps{
+    font-size: 25px;
+}
+.fnugg-weather-direction{
+    margin-bottom: -6px;
+}
+.fnugg-snow-type-icon{
+    max-width: 60px;
+    height: 50px;
+}
+.fnugg-snow-type-name{
+    height: fit-content;
+    width: fit-content;
+    margin-left: 5px;
+}
