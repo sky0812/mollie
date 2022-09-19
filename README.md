@@ -19,7 +19,7 @@ password: 4eQ&mS#E46
 You can find the plugin in wp-content/plugins/wp_fnugg_resort folder
 
 1. in "assets" folder there are webpack generated styles and scripts
-2. in inc/classes/ I created two classes "block" and "connector". In class-block.php I created a function for the new block. In class-connector.php I connected the block to Fnugg API, coded the search functionality and defined variables for the block's frontend.
+2. in inc/classes/ I created two classes "block" and "connector". In class-block.php I created a function for the new block. In class-connector.php I connected the block to Fnugg API, coded the search functionality and defined variables for the block's frontend. Also there is cache added for 24 hours. If there is cache, all the data are pulled from there. If the cache is empty, the API request will run. 
 3. In src/js/block.js I registered the block in Widgets section of the Gutenberg, set up search autocomplete and wp-admin block visual with tips.
 4. In templates/block-template.php I created HTML markup for the new block's frontend and placed there the variables from the API.
 
