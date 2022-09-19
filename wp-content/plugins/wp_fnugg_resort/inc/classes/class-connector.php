@@ -21,11 +21,25 @@ class Connector {
             $search_name = $atr['searchName'];
         }
 
-        $response = wp_remote_get( 'https://api.fnugg.no/search?q=' . $search_name . '&sourceFields=name,images,contact.city,contact.address,conditions.combined.top' );
+        $cache =  json_decode( get_transient( $search_name ), JSON_OBJECT_AS_ARRAY );
+
+        if( $cache ){
+
+            $this->resort_all_info = $cache;
+        }else{
+
+            $this->make_fnugg_api_call( $search_name );
+        }
+    }
+
+    public function make_fnugg_api_call( $search_name ) {
+
+        $response = wp_remote_get( 'https://api.fnugg.no/search?q=' . $search_name . '&sourceFields=name,images,conditions.combined.top' );
         $response_body = json_decode( wp_remote_retrieve_body($response) );
         $is_content = false;
+
         if( $response_body->hits->total != 0 ){
-            
+
             $resort_name = $response_body->hits->hits['0']->_source->name;
             $resort_city = $response_body->hits->hits['0']->_source->contact->city;
             $resort_address = $response_body->hits->hits['0']->_source->contact->address;
@@ -55,5 +69,8 @@ class Connector {
             'image_url'                 => $image_url,
             'is_content'                => $is_content,
         ];
+
+        // Store data for one day (24 hours X 3600 seconds in one hour)
+        set_transient( $search_name, json_encode( $this->resort_all_info ), 3600 * 24 );
     }
 }
