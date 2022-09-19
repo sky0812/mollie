@@ -34,7 +34,7 @@ class Connector {
 
     public function make_fnugg_api_call( $search_name ) {
 
-        $response = wp_remote_get( 'https://api.fnugg.no/search?q=' . $search_name . '&sourceFields=name,images,conditions.combined.top' );
+        $response = wp_remote_get( 'https://api.fnugg.no/search?q=' . $search_name . '&sourceFields=name,images,contact.city,contact.address,conditions.combined.top' );
         $response_body = json_decode( wp_remote_retrieve_body($response) );
         $is_content = false;
 
